@@ -1,0 +1,10 @@
+# For functional base views
+def simple(request):
+    method = request.method.lower()
+    if method == 'get':
+        return JsonResponse({'data': '1, 2, 3, 4, 5'})
+    elif method == 'post':
+        return JsonResponse({'data': 'Added successfully to POST method'})
+    elif method == 'put':
+        return JsonResponse({'data': 'Added successfully to PUT method'})
+    return JsonResponse({"error": 'there was an error in the method'})
